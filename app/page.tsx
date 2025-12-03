@@ -20,9 +20,8 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {/* 1. 배경 (터미널 효과) */}
+      {/* 1. 배경 레이어 */}
       <div className="bg-layer">
-        {/* 마운트 된 후에만 렌더링하여 안전하게 표시 */}
         {mounted && (
           <FaultyTerminal
             tint="#ffffffff"
@@ -49,15 +48,12 @@ const App = () => {
         )}
       </div>
 
-      {/* 폰트 로드 */}
       <style>
         {`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');`}
       </style>
 
-      {/* 2. 메인 컨텐츠 레이아웃 */}
+      {/* 2. 컨텐츠 레이어 */}
       <div className="content-wrapper">
-        
-        {/* 왼쪽: 텍스트 정보 영역 */}
         <div className="left-section">
           <div className="title-area">
             <TextType 
@@ -107,13 +103,12 @@ const App = () => {
           </div>
         </div>
 
-        {/* 오른쪽: 3D 아티팩트 영역 */}
         <div className="right-section">
           {mounted && <CyberArtifact />}
         </div>
       </div>
 
-      {/* 3. CSS 스타일 */}
+      {}
       <style jsx>{`
         .app-container {
           width: 100%;
@@ -126,12 +121,12 @@ const App = () => {
         .bg-layer {
           position: absolute;
           top: 0; left: 0; width: 100%; height: 100%;
-          z-index: 1; /* 배경이 맨 뒤로 가도록 설정 */
+          z-index: 1;
         }
 
         .content-wrapper {
           position: relative;
-          z-index: 10; /* 컨텐츠는 배경보다 앞에 */
+          z-index: 10;
           width: 100%;
           height: 100%;
           display: flex;
@@ -139,6 +134,8 @@ const App = () => {
           padding: 5%;
           box-sizing: border-box;
           align-items: center;
+          
+          pointer-events: none; 
         }
 
         .left-section {
@@ -154,6 +151,8 @@ const App = () => {
           height: 100%;
           position: relative;
           min-width: 300px;
+          /* 3D 오브젝트는 마우스 반응해야 하므로 */
+          pointer-events: auto; 
         }
 
         .title-area {
@@ -184,6 +183,8 @@ const App = () => {
           color: #e0e0e0;
           font-family: 'Noto Sans KR', sans-serif;
           transition: transform 0.2s ease;
+          
+          pointer-events: auto; 
         }
         
         .glass-card:hover {
@@ -230,6 +231,8 @@ const App = () => {
           font-size: 0.9rem;
           text-decoration: none;
           transition: background 0.3s ease;
+          
+          pointer-events: auto; 
         }
         .blog-btn:hover {
           background: rgba(255, 255, 255, 0.2);
@@ -237,7 +240,7 @@ const App = () => {
 
         @media (max-width: 1024px) {
           .app-container { height: auto; min-height: 100vh; overflow-y: auto; }
-          .content-wrapper { flex-direction: column; padding: 20px; padding-top: 60px; }
+          .content-wrapper { flex-direction: column; padding: 20px; padding-top: 60px; pointer-events: auto; /* 모바일은 스크롤 때문에 전체 허용 */ }
           .left-section { width: 100%; max-width: 100%; z-index: 20; margin-bottom: 50px; }
           .right-section { position: fixed; top: 20%; left: 0; width: 100%; height: 60vh; z-index: 5; opacity: 0.6; pointer-events: none; }
           .title-area { font-size: 3rem; text-align: left; margin-bottom: 2rem; white-space: normal; }
