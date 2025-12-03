@@ -1,11 +1,11 @@
 "use client";
 
-import React from 'react';
-import dynamic from 'next/dynamic'; 
+import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import TextType from '../components/TextType';
 
 const FaultyTerminal = dynamic(() => import('../components/FaultyTerminal'), { 
-  ssr: false 
+  ssr: false
 });
 
 const CyberArtifact = dynamic(() => import('../components/CyberArtifact'), { 
@@ -13,32 +13,40 @@ const CyberArtifact = dynamic(() => import('../components/CyberArtifact'), {
 });
 
 const App = () => {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="app-container">
       {/* 1. 배경 (터미널 효과) */}
       <div className="bg-layer">
-        <FaultyTerminal
-          tint="#ffffffff"
-          scale={2.5}
-          digitSize={1.2}
-          timeScale={0.5}     
-          noiseAmp={1}       
-          brightness={0.1}
-          scanlineIntensity={0.5}
-          curvature={0.1}
-          mouseStrength={0.5}
-          mouseReact={true}
-          pageLoadAnimation={false}
-          gridMul={[2, 1]}
-          failColor="#FF0000"
-          glitchAmount={1}
-          flickerAmount={1}
-          chromaticAberration={0}
-          dither={0}
-          pause={false}
-          className=""
-          style={{}}
-        />
+        {/* 마운트 된 후에만 렌더링하여 안전하게 표시 */}
+        {mounted && (
+          <FaultyTerminal
+            tint="#ffffffff"
+            scale={2.5}
+            digitSize={1.2}
+            timeScale={0.5}     
+            noiseAmp={1}       
+            brightness={0.1}
+            scanlineIntensity={0.5}
+            curvature={0.1}
+            mouseStrength={0.5}
+            mouseReact={true}
+            pageLoadAnimation={false}
+            gridMul={[2, 1]}
+            failColor="#FF0000"
+            glitchAmount={1}
+            flickerAmount={1}
+            chromaticAberration={0}
+            dither={0}
+            pause={false}
+            className=""
+            style={{}}
+          />
+        )}
       </div>
 
       {/* 폰트 로드 */}
@@ -51,7 +59,6 @@ const App = () => {
         
         {/* 왼쪽: 텍스트 정보 영역 */}
         <div className="left-section">
-          {/* 타이틀 */}
           <div className="title-area">
             <TextType 
               text={["Welcome.", "It's KARAJAN"]}
@@ -67,21 +74,17 @@ const App = () => {
             />
           </div>
 
-          {/* 정보 카드 리스트 */}
           <div className="cards-container">
-            {/* Whoami */}
             <div className="glass-card">
               <h3>Whoami</h3>
               <p>love rev, and just do.</p>
             </div>
 
-            {/* Experience */}
             <div className="glass-card">
               <h3>Experience</h3>
               <p>[KITRI] WhiteHat School 3기 수료</p>
             </div>
 
-            {/* Contact */}
             <div className="glass-card">
               <h3>Contact</h3>
               <div className="contact-info">
@@ -90,7 +93,6 @@ const App = () => {
               </div>
             </div>
 
-            {/* Blog Button */}
             <div className="glass-card row-card">
               <h3>And my blog!</h3>
               <a 
@@ -107,13 +109,12 @@ const App = () => {
 
         {/* 오른쪽: 3D 아티팩트 영역 */}
         <div className="right-section">
-          <CyberArtifact />
+          {mounted && <CyberArtifact />}
         </div>
       </div>
 
       {/* 3. CSS 스타일 */}
       <style jsx>{`
-        /* 전체 컨테이너 */
         .app-container {
           width: 100%;
           height: 100vh;
@@ -122,17 +123,15 @@ const App = () => {
           overflow: hidden;
         }
 
-        /* 배경 레이어 */
         .bg-layer {
           position: absolute;
           top: 0; left: 0; width: 100%; height: 100%;
-          z-index: 1;
+          z-index: 1; /* 배경이 맨 뒤로 가도록 설정 */
         }
 
-        /* 컨텐츠 래퍼 */
         .content-wrapper {
           position: relative;
-          z-index: 10;
+          z-index: 10; /* 컨텐츠는 배경보다 앞에 */
           width: 100%;
           height: 100%;
           display: flex;
@@ -142,7 +141,6 @@ const App = () => {
           align-items: center;
         }
 
-        /* 왼쪽 섹션 */
         .left-section {
           flex: 1;
           display: flex;
@@ -151,7 +149,6 @@ const App = () => {
           max-width: 600px;
         }
 
-        /* 오른쪽 섹션 (3D) */
         .right-section {
           flex: 1;
           height: 100%;
@@ -159,7 +156,6 @@ const App = () => {
           min-width: 300px;
         }
 
-        /* 타이틀 영역 */
         .title-area {
           font-size: 5rem;
           color: #a8a8a8;
@@ -171,7 +167,6 @@ const App = () => {
           min-height: 120px;
         }
 
-        /* 카드 컨테이너 */
         .cards-container {
           display: flex;
           flex-direction: column;
@@ -179,7 +174,6 @@ const App = () => {
           width: 100%;
         }
 
-        /* 글라스모피즘 카드 스타일 */
         .glass-card {
           padding: 1.5rem;
           background: rgba(255, 255, 255, 0.03);
@@ -241,55 +235,15 @@ const App = () => {
           background: rgba(255, 255, 255, 0.2);
         }
 
-        /* 모바일 스타일 */
         @media (max-width: 1024px) {
-          .app-container {
-            height: auto;
-            min-height: 100vh;
-            overflow-y: auto;
-          }
-
-          .content-wrapper {
-            flex-direction: column;
-            padding: 20px;
-            padding-top: 60px;
-          }
-
-          .left-section {
-            width: 100%;
-            max-width: 100%;
-            z-index: 20;
-            margin-bottom: 50px;
-          }
-
-          .right-section {
-            position: fixed;
-            top: 20%;
-            left: 0;
-            width: 100%;
-            height: 60vh;
-            z-index: 5;
-            opacity: 0.6;
-            pointer-events: none;
-          }
-
-          .title-area {
-            font-size: 3rem;
-            text-align: left;
-            margin-bottom: 2rem;
-            white-space: normal;
-          }
-          
-          .glass-card {
-             background: rgba(0, 0, 0, 0.6);
-          }
+          .app-container { height: auto; min-height: 100vh; overflow-y: auto; }
+          .content-wrapper { flex-direction: column; padding: 20px; padding-top: 60px; }
+          .left-section { width: 100%; max-width: 100%; z-index: 20; margin-bottom: 50px; }
+          .right-section { position: fixed; top: 20%; left: 0; width: 100%; height: 60vh; z-index: 5; opacity: 0.6; pointer-events: none; }
+          .title-area { font-size: 3rem; text-align: left; margin-bottom: 2rem; white-space: normal; }
+          .glass-card { background: rgba(0, 0, 0, 0.6); }
         }
-
-        @media (max-width: 480px) {
-           .title-area {
-            font-size: 2.5rem;
-           }
-        }
+        @media (max-width: 480px) { .title-area { font-size: 2.5rem; } }
       `}</style>
     </div>
   );
