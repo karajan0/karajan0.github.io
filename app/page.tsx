@@ -1,9 +1,16 @@
 "use client";
 
 import React from 'react';
-import FaultyTerminal from '../components/FaultyTerminal';
+import dynamic from 'next/dynamic'; 
 import TextType from '../components/TextType';
-import CyberArtifact from '../components/CyberArtifact';
+
+const FaultyTerminal = dynamic(() => import('../components/FaultyTerminal'), { 
+  ssr: false 
+});
+
+const CyberArtifact = dynamic(() => import('../components/CyberArtifact'), { 
+  ssr: false 
+});
 
 const App = () => {
   return (
@@ -104,7 +111,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* 3. CSS 스타일 (반응형 로직 포함) */}
+      {/* 3. CSS 스타일 */}
       <style jsx>{`
         /* 전체 컨테이너 */
         .app-container {
@@ -112,7 +119,7 @@ const App = () => {
           height: 100vh;
           position: relative;
           background-color: #000;
-          overflow: hidden; /* PC에서는 스크롤 방지 */
+          overflow: hidden;
         }
 
         /* 배경 레이어 */
@@ -122,7 +129,7 @@ const App = () => {
           z-index: 1;
         }
 
-        /* 컨텐츠 래퍼 (Flexbox) */
+        /* 컨텐츠 래퍼 */
         .content-wrapper {
           position: relative;
           z-index: 10;
@@ -132,7 +139,7 @@ const App = () => {
           flex-direction: row;
           padding: 5%;
           box-sizing: border-box;
-          align-items: center; /* 수직 중앙 정렬 */
+          align-items: center;
         }
 
         /* 왼쪽 섹션 */
@@ -154,14 +161,14 @@ const App = () => {
 
         /* 타이틀 영역 */
         .title-area {
-          font-size: 5rem; /* 기본 PC 폰트 사이즈 */
+          font-size: 5rem;
           color: #a8a8a8;
           font-family: 'Noto Sans KR', sans-serif;
           font-weight: 900;
           letter-spacing: -0.05em;
           white-space: nowrap;
           margin-bottom: 2rem;
-          min-height: 120px; /* 타이핑 높이 확보 */
+          min-height: 120px;
         }
 
         /* 카드 컨테이너 */
@@ -234,19 +241,16 @@ const App = () => {
           background: rgba(255, 255, 255, 0.2);
         }
 
-        /* =========================================
-           [모바일/태블릿 반응형 스타일]
-           화면 너비가 1024px 이하일 때 적용
-        ========================================= */
+        /* 모바일 스타일 */
         @media (max-width: 1024px) {
           .app-container {
             height: auto;
             min-height: 100vh;
-            overflow-y: auto; /* 모바일은 스크롤 허용 */
+            overflow-y: auto;
           }
 
           .content-wrapper {
-            flex-direction: column; /* 세로 배치로 변경 */
+            flex-direction: column;
             padding: 20px;
             padding-top: 60px;
           }
@@ -255,34 +259,32 @@ const App = () => {
             width: 100%;
             max-width: 100%;
             z-index: 20;
-            margin-bottom: 50px; /* 하단 여백 */
+            margin-bottom: 50px;
           }
 
           .right-section {
-            /* 3D 오브젝트를 배경처럼 뒤로 보냄 */
             position: fixed;
             top: 20%;
             left: 0;
             width: 100%;
             height: 60vh;
             z-index: 5;
-            opacity: 0.6; /* 글자 잘 보이게 투명도 조절 */
-            pointer-events: none; /* 터치 방해 안 되게 */
+            opacity: 0.6;
+            pointer-events: none;
           }
 
           .title-area {
-            font-size: 3rem; /* 폰트 크기 줄임 */
+            font-size: 3rem;
             text-align: left;
             margin-bottom: 2rem;
-            white-space: normal; /* 줄바꿈 허용 */
+            white-space: normal;
           }
           
           .glass-card {
-             background: rgba(0, 0, 0, 0.6); /* 모바일 가독성 위해 배경 진하게 */
+             background: rgba(0, 0, 0, 0.6);
           }
         }
 
-        /* 모바일이 아주 작을 때 (폰) */
         @media (max-width: 480px) {
            .title-area {
             font-size: 2.5rem;
