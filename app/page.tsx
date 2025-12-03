@@ -20,7 +20,6 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {/* 1. 배경 레이어 */}
       <div className="bg-layer">
         {mounted && (
           <FaultyTerminal
@@ -52,7 +51,6 @@ const App = () => {
         {`@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');`}
       </style>
 
-      {/* 2. 컨텐츠 레이어 */}
       <div className="content-wrapper">
         <div className="left-section">
           <div className="title-area">
@@ -108,7 +106,6 @@ const App = () => {
         </div>
       </div>
 
-      {}
       <style jsx>{`
         .app-container {
           width: 100%;
@@ -121,7 +118,7 @@ const App = () => {
         .bg-layer {
           position: absolute;
           top: 0; left: 0; width: 100%; height: 100%;
-          z-index: 1;
+          z-index: 0; 
         }
 
         .content-wrapper {
@@ -134,8 +131,7 @@ const App = () => {
           padding: 5%;
           box-sizing: border-box;
           align-items: center;
-          
-          pointer-events: none; 
+          pointer-events: none;
         }
 
         .left-section {
@@ -151,8 +147,7 @@ const App = () => {
           height: 100%;
           position: relative;
           min-width: 300px;
-          /* 3D 오브젝트는 마우스 반응해야 하므로 */
-          pointer-events: auto; 
+          pointer-events: none; 
         }
 
         .title-area {
@@ -183,8 +178,7 @@ const App = () => {
           color: #e0e0e0;
           font-family: 'Noto Sans KR', sans-serif;
           transition: transform 0.2s ease;
-          
-          pointer-events: auto; 
+          pointer-events: auto;
         }
         
         .glass-card:hover {
@@ -192,35 +186,12 @@ const App = () => {
           transform: translateX(5px);
         }
 
-        .glass-card h3 {
-          margin: 0 0 0.5rem 0;
-          font-size: 1.2rem;
-          font-weight: 700;
-          color: #fff;
-        }
+        .glass-card h3 { margin: 0 0 0.5rem 0; font-size: 1.2rem; font-weight: 700; color: #fff; }
+        .glass-card p { margin: 0; font-size: 1rem; font-weight: 300; color: #a0a0a0; }
 
-        .glass-card p {
-          margin: 0;
-          font-size: 1rem;
-          font-weight: 300;
-          color: #a0a0a0;
-        }
+        .contact-info { display: flex; flex-direction: column; gap: 5px; font-size: 1rem; font-weight: 300; color: #a0a0a0; }
 
-        .contact-info {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          font-size: 1rem;
-          font-weight: 300;
-          color: #a0a0a0;
-        }
-
-        .row-card {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 1rem 1.5rem;
-        }
+        .row-card { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem; }
 
         .blog-btn {
           padding: 8px 16px;
@@ -231,16 +202,13 @@ const App = () => {
           font-size: 0.9rem;
           text-decoration: none;
           transition: background 0.3s ease;
-          
-          pointer-events: auto; 
+          pointer-events: auto;
         }
-        .blog-btn:hover {
-          background: rgba(255, 255, 255, 0.2);
-        }
+        .blog-btn:hover { background: rgba(255, 255, 255, 0.2); }
 
         @media (max-width: 1024px) {
           .app-container { height: auto; min-height: 100vh; overflow-y: auto; }
-          .content-wrapper { flex-direction: column; padding: 20px; padding-top: 60px; pointer-events: auto; /* 모바일은 스크롤 때문에 전체 허용 */ }
+          .content-wrapper { flex-direction: column; padding: 20px; padding-top: 60px; pointer-events: auto; }
           .left-section { width: 100%; max-width: 100%; z-index: 20; margin-bottom: 50px; }
           .right-section { position: fixed; top: 20%; left: 0; width: 100%; height: 60vh; z-index: 5; opacity: 0.6; pointer-events: none; }
           .title-area { font-size: 3rem; text-align: left; margin-bottom: 2rem; white-space: normal; }
