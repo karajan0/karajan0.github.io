@@ -237,12 +237,11 @@ export default function FaultyTerminal({
   tint = '#ffffff',
   mouseReact = true,
   mouseStrength = 0.2,
-  dpr = Math.min(window.devicePixelRatio || 1, 2),
+  dpr,
   pageLoadAnimation = true,
   brightness = 1,
   className,
-  style,
-  ...rest
+  style
 }) {
   const containerRef = useRef(null);
   const programRef = useRef(null);
@@ -253,25 +252,40 @@ export default function FaultyTerminal({
   const rafRef = useRef(0);
   const loadAnimationStartRef = useRef(0);
   const timeOffsetRef = useRef(Math.random() * 100);
+  const pageHiddenRef = useRef(false);
 
   const tintVec = useMemo(() => hexToRgb(tint), [tint]);
 
   const ditherValue = useMemo(() => (typeof dither === 'boolean' ? (dither ? 1 : 0) : dither), [dither]);
 
+  const resolvedDpr = useMemo(() => {
+    if (typeof dpr === 'number') return dpr;
+    const deviceDpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
+    return Math.min(deviceDpr, 2);
+  }, [dpr]);
+
   const handleMouseMove = useCallback(e => {
-    const ctn = containerRef.current;
-    if (!ctn) return;
-    const rect = ctn.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width;
-    const y = 1 - (e.clientY - rect.top) / rect.height;
+    const width = window.innerWidth || 1;
+    const height = window.innerHeight || 1;
+    const x = e.clientX / width;
+    const y = 1 - e.clientY / height;
     mouseRef.current = { x, y };
+  }, []);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      pageHiddenRef.current = document.visibilityState === 'hidden';
+    };
+    handleVisibilityChange();
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
   useEffect(() => {
     const ctn = containerRef.current;
     if (!ctn) return;
 
-    const renderer = new Renderer({ dpr });
+    const renderer = new Renderer({ dpr: resolvedDpr });
     rendererRef.current = renderer;
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 1);
@@ -333,7 +347,7 @@ export default function FaultyTerminal({
         loadAnimationStartRef.current = t;
       }
 
-      if (!pause) {
+      if (!pause && !pageHiddenRef.current) {
         const elapsed = (t * 0.001 + timeOffsetRef.current) * timeScale;
         program.uniforms.iTime.value = elapsed;
         frozenTimeRef.current = elapsed;
@@ -365,19 +379,19 @@ export default function FaultyTerminal({
     rafRef.current = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
-    if (mouseReact) ctn.addEventListener('mousemove', handleMouseMove);
+    if (mouseReact) window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       cancelAnimationFrame(rafRef.current);
       resizeObserver.disconnect();
-      if (mouseReact) ctn.removeEventListener('mousemove', handleMouseMove);
+      if (mouseReact) window.removeEventListener('mousemove', handleMouseMove);
       if (gl.canvas.parentElement === ctn) ctn.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
       loadAnimationStartRef.current = 0;
       timeOffsetRef.current = Math.random() * 100;
     };
   }, [
-    dpr,
+    resolvedDpr,
     pause,
     timeScale,
     scale,
@@ -398,5 +412,5 @@ export default function FaultyTerminal({
     handleMouseMove
   ]);
 
-  return <div ref={containerRef} className={`faulty-terminal-container ${className}`} style={style} {...rest} />;
+  return <div ref={containerRef} className={`faulty-terminal-container ${className}`} style={style} />;
 }

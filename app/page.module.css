@@ -1,0 +1,246 @@
+.appContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.bgLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 6%;
+  pointer-events: auto;
+}
+
+.leftSection {
+  flex: 0 0 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 520px;
+}
+
+.rightSection {
+  flex: 0 0 520px;
+  height: 100%;
+  position: relative;
+  min-width: 300px;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleArea {
+  font-size: 5rem;
+  color: #a8a8a8;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  margin-bottom: 2rem;
+  min-height: 120px;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+  flex: 1;
+}
+
+.glassCard {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  transition: transform 0.2s ease, background 0.2s ease;
+  pointer-events: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.glassCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(5px);
+}
+
+.glassCard h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.glassCard p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #a0a0a0;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #a0a0a0;
+  align-items: center;
+}
+
+.contactInfo span {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.inlineLink {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.inlineLink:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.rowCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.rowCard h3 {
+  font-size: 1rem;
+}
+
+.blogBtn {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  pointer-events: auto;
+}
+
+.blogCard {
+  margin-top: auto;
+  align-self: flex-start;
+  width: auto;
+  text-align: left;
+}
+
+.blogBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.artFigure {
+  margin: 0;
+  max-width: 520px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.artImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.artCaption {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .appContainer {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 60px;
+  }
+
+  .leftSection {
+    width: 100%;
+    max-width: 100%;
+    z-index: 20;
+    margin-bottom: 50px;
+  }
+
+  .rightSection {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    z-index: 5;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .titleArea {
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    white-space: normal;
+  }
+
+  .glassCard {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .blogCard {
+    align-self: center;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .titleArea {
+    font-size: 2.5rem;
+  }
+}

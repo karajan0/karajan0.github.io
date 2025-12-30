@@ -1,0 +1,10 @@
+.snowWrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.snowCanvas {
+  width: 100%;
+  height: 100%;
+}
