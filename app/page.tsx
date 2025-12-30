@@ -34,7 +34,6 @@ const App = () => {
             mouseReact={true}
             pageLoadAnimation={false}
             gridMul={[2, 1]}
-            failColor="#FF0000"
             glitchAmount={1}
             flickerAmount={1}
             chromaticAberration={0}
