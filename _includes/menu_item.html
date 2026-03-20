@@ -1,0 +1,29 @@
+{% for item in include.collection %}
+  <li>
+    {% if item.url %}
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    {% else %}
+      {{ item.title }}
+    {% endif %}
+
+    {% if item.post_list %}
+      <ul>
+        {% assign posts = site.posts %}
+        {% if item.category %}
+          {% assign posts = posts | where_exp: "post", "post.categories contains item.category" %}
+        {% endif %}
+        {% for post in posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if item.entries %}
+      <ul>
+        {% include menu_item.html collection=item.entries %}
+      </ul>
+    {% endif %}
+  </li>
+{% endfor %}

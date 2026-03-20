@@ -1,0 +1,115 @@
+.home-logo {
+  flex: 0 0 auto;
+  display: block;
+  width: 60px;
+  height: auto;
+  margin: 0;
+}
+
+.site-header {
+  margin-bottom: 1.5rem;
+}
+
+.site-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-title-row h1 {
+  margin: 0;
+}
+
+hr {
+  height: 1px;
+  margin: 2rem 0;
+  border: 0;
+  background: #cfcfcf;
+}
+
+hr::before,
+hr::after {
+  content: none;
+}
+
+code {
+  padding: 0.12rem 0.35rem;
+  border-radius: 4px;
+  color: #111111;
+  background: #e7e7e7;
+}
+
+div.highlighter-rouge,
+.highlight {
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.highlighter-rouge pre,
+.highlight pre {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  line-height: 1.65;
+}
+
+.highlight {
+  color: #1c1c1c;
+  background-color: #ececec;
+  border: 1px solid #d8d8d8;
+}
+
+.highlight .c,
+.highlight .ch,
+.highlight .cd,
+.highlight .cm,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs {
+  color: #6b7280;
+}
+
+.highlight .k,
+.highlight .kd,
+.highlight .kv,
+.highlight .o,
+.highlight .ow,
+.highlight .p,
+.highlight .pi {
+  color: #374151;
+}
+
+.highlight .cp,
+.highlight .kt,
+.highlight .no,
+.highlight .nc,
+.highlight .nd,
+.highlight .nn,
+.highlight .bp,
+.highlight .ne,
+.highlight .nf,
+.highlight .fm,
+.highlight .py,
+.highlight .na,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .vm {
+  color: #7c3aed;
+}
+
+.highlight .s,
+.highlight .sb,
+.highlight .dl,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .sa,
+.highlight .se,
+.highlight .sc,
+.highlight .si {
+  color: #b45309;
+}
