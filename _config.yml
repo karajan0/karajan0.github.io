@@ -1,0 +1,28 @@
+title: KARAJAN
+author: karajan
+email: fyonglkm@gmail.com
+url: https://karajan0.github.io
+baseurl: ""
+description: karajan
+
+permalink: /:slug/
+
+favicon: "favicon.ico"
+
+remote_theme: riggraz/no-style-please
+
+theme_config:
+  appearance: "dark"
+  back_home_text: "home"
+  date_format: "%Y-%m-%d"
+  show_description: false
+
+plugins:
+  - jekyll-feed
+  - jekyll-remote-theme
+
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false

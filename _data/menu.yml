@@ -1,0 +1,36 @@
+entries:
+  - title: NAME
+    entries:
+      - title: 이규민, karajan
+
+  - title: CONTACT
+    entries:
+      - title: Mail - fyonglkm@gmail.com
+      - title: Discord - @karajann
+      - title: Instagram - @qm1nn
+
+  - title: Education
+    entries:
+      - title: "[KITRI] WhiteHat School 3기 수료"
+
+  - title: Project
+    entries:
+      - title: WHS, 선박 기자재 탑재 SW 정보 수집 및 취약점 분석 (SeaBugs)
+      - title: 화이트햇스쿨 우수 프로젝트 선정
+
+  - title: Awards
+    entries:
+      - title: niteCTF 2025 - 2nd place (as ssul)
+      - title: hxp 39C3 CTF 2025 - 2nd place (as dizziness)
+
+  - title: Blog
+    entries:
+      - title: go to blog page
+        url: /blog/
+      - title: tistory archive
+        url: https://karajann.tistory.com/
+
+  - title: "?"
+    entries:
+      - title: kisssss
+        url: https://www.youtube.com/watch?v=6krfcpTUCcE
