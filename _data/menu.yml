@@ -7,16 +7,19 @@ entries:
     entries:
       - title: Mail - fyonglkm@gmail.com
       - title: Discord - @karajann
+      - title: X - @karajann_
       - title: Instagram - @qm1nn
 
-  - title: Education
+  - title: Experience
     entries:
+      - title: "상명대학교 정보보안공학과 재학"
       - title: "[KITRI] WhiteHat School 3기 수료"
+      - title: "CTF Player in Rubiyalab"
+        url: https://rubiyalab.team/
 
   - title: Project
     entries:
-      - title: WHS, 선박 기자재 탑재 SW 정보 수집 및 취약점 분석 (SeaBugs)
-      - title: 화이트햇스쿨 우수 프로젝트 선정
+      - title: 화이트햇스쿨, 선박 기자재 탑재 SW 정보 수집 및 취약점 분석 (SeaBugs, 우수 프로젝트)
 
   - title: Awards
     entries:
