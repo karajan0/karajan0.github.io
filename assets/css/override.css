@@ -20,16 +20,20 @@
   margin: 0;
 }
 
-.home-menu > li {
-  margin-top: 1.35rem;
-}
-
-.home-menu > li:first-child {
+.home-menu {
   margin-top: 0;
 }
 
+.home-menu > li {
+  margin: 0 0 1.8rem;
+}
+
+.home-menu > li:last-child {
+  margin-bottom: 0;
+}
+
 .home-menu > li > ul {
-  margin-top: 0.45rem;
+  margin-top: 0.65rem;
 }
 
 hr {
