@@ -1,5 +1,5 @@
 {% for item in include.collection %}
-  <li>
+  <li{% if include.item_class %} class="{{ include.item_class }}"{% endif %}>
     {% if item.url and item.link_title %}
       {{ item.title }}<a href="{{ item.url }}">{{ item.link_title }}</a>
     {% elsif item.url %}

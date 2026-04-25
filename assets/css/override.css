@@ -24,16 +24,17 @@
   margin-top: 0;
 }
 
-.home-menu > li {
-  margin: 0 0 1.8rem;
+.home-menu-section {
+  margin: 0 0 2.4rem;
 }
 
-.home-menu > li:last-child {
+.home-menu-section:last-child {
   margin-bottom: 0;
 }
 
-.home-menu > li > ul {
-  margin-top: 0.65rem;
+.home-menu-section > ul {
+  margin-top: 0.8rem;
+  margin-bottom: 0;
 }
 
 hr {
