@@ -32,6 +32,10 @@ entries:
       - title: niteCTF 2025 - 2nd place (as ssul)
       - title: hxp 39C3 CTF 2025 - 2nd place (as dizziness)
 
+  - title: Vulnerability disclosure
+    entries:
+      - title: "조치 후 공개예정"
+
   - title: Blog
     entries:
       - title: go to blog page
