@@ -20,6 +20,18 @@
   margin: 0;
 }
 
+.home-menu > li {
+  margin-top: 1.35rem;
+}
+
+.home-menu > li:first-child {
+  margin-top: 0;
+}
+
+.home-menu > li > ul {
+  margin-top: 0.45rem;
+}
+
 hr {
   height: 1px;
   margin: 2rem 0;
