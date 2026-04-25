@@ -1,6 +1,8 @@
 {% for item in include.collection %}
   <li>
-    {% if item.url %}
+    {% if item.url and item.link_title %}
+      {{ item.title }}<a href="{{ item.url }}">{{ item.link_title }}</a>
+    {% elsif item.url %}
       <a href="{{ item.url }}">{{ item.title }}</a>
     {% else %}
       {{ item.title }}

@@ -2,19 +2,25 @@ entries:
   - title: NAME
     entries:
       - title: 이규민, karajan
+      - title: Hi? rev at me.
 
   - title: CONTACT
     entries:
-      - title: Mail - fyonglkm@gmail.com
+      - title: Mail - me@karajan.com
       - title: Discord - @karajann
-      - title: X - @karajann_
-      - title: Instagram - @qm1nn
+      - title: "X - "
+        link_title: "@karajann_"
+        url: https://x.com/karajann_
+      - title: "Instagram - "
+        link_title: "@qm1nn"
+        url: https://www.instagram.com/qm1nn/
 
   - title: Experience
     entries:
       - title: "상명대학교 정보보안공학과 재학"
       - title: "[KITRI] WhiteHat School 3기 수료"
-      - title: "CTF Player in Rubiyalab"
+      - title: "CTF Player in "
+        link_title: "Rubiyalab"
         url: https://rubiyalab.team/
 
   - title: Project
