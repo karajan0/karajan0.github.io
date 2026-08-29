@@ -2,7 +2,7 @@ entries:
   - title: NAME
     entries:
       - title: 이규민, karajan
-      - title: A journey of aimless wandering
+      - title: Until Reaching the Pole
 
   - title: CONTACT
     entries:
@@ -14,14 +14,17 @@ entries:
       - title: "Instagram - "
         link_title: "@qm1nn"
         url: https://www.instagram.com/qm1nn/
+      - title: "Linkedin - "
+        link_title: "@kyumin-lee0"
+        url: "https://www.linkedin.com/in/kyumin-lee0/"
 
   - title: Experience
     entries:
       - title: "상명대학교 정보보안공학과 재학"
       - title: "[KITRI] WhiteHat School 3기 수료"
-      - title: "CTF Player in "
-        link_title: "Rubiyalab"
-        url: https://rubiyalab.team/
+      - title: "Team member of "
+        link_title: "RubiyaLab Expeditions"
+        url: https://exp.rubiyalab.com/
 
   - title: Project
     entries:

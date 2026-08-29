@@ -2,8 +2,11 @@
   flex: 0 0 auto;
   display: block;
   width: 60px;
-  height: auto;
+  height: 60px;
   margin: 0;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
 }
 
 .site-header {
