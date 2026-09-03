@@ -20,7 +20,6 @@ entries:
 
   - title: Experience
     entries:
-      - title: "상명대학교 정보보안공학과 재학"
       - title: "[KITRI] WhiteHat School 3기 수료"
       - title: "Team member of "
         link_title: "RubiyaLab Expeditions"
@@ -29,14 +28,19 @@ entries:
   - title: Project
     entries:
       - title: 화이트햇스쿨, 선박 기자재 탑재 SW 정보 수집 및 취약점 분석 (SeaBugs, 우수 프로젝트)
+      - title: King of the Hill 교육 웹사이트 제작 (pole, 진행중)
+      - title: 제4회 CSE-H-CON CTF 문제 출제 
+      - title: "(confidential)"
 
   - title: Awards
     entries:
-      - title: "DEF CON 34 CTF Finalist (as Jinddabi's)"
-      - title: "2026 HACKTHEON Sejong Finalist (as 실버타운)"
+      - title: DEF CON 34 CTF Finalist (as Jinddabi's)
+      - title: TJCTF 2026 - 1st place (as Jinddabi's)
+      - title: 2026 HACKTHEON Sejong Finalist (as 실버타운)
       - title: niteCTF 2025 - 2nd place (as ssul)
       - title: hxp 39C3 CTF 2025 - 2nd place (as dizziness)
       - title: bdsec CTF 2026 - 2nd place (as dizziness)
+      - title: 첨단AI 디지털 의료제품 레드팀 챌린지 우수상 
 
   - title: Vulnerability disclosure
     entries:
@@ -48,8 +52,3 @@ entries:
         url: /blog/
       - title: tistory archive
         url: https://karajann.tistory.com/
-
-  - title: "?"
-    entries:
-      - title: kisssss
-        url: https://www.youtube.com/watch?v=6krfcpTUCcE
