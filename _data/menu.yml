@@ -34,7 +34,8 @@ entries:
 
   - title: Awards
     entries:
-      - title: DEF CON 34 CTF Finalist (as Jinddabi's)
+      - title: DEF CON 34 CTF 7th place (as Jinddabi's)
+      - title: BlackHat MEA CTF Qual 2026 3th place (as NAVER Cloud)
       - title: TJCTF 2026 - 1st place (as Jinddabi's)
       - title: 2026 HACKTHEON Sejong Finalist (as 실버타운)
       - title: niteCTF 2025 - 2nd place (as ssul)
@@ -44,7 +45,9 @@ entries:
 
   - title: Vulnerability disclosure
     entries:
-      - title: "조치 후 공개예정"
+      - title: CVE-2026-80713 (linux kernel) - 
+        link_title: LINK
+        url: https://ubuntu.com/security/CVE-2026-80713
 
   - title: Blog
     entries:
