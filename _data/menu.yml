@@ -45,7 +45,7 @@ entries:
 
   - title: Vulnerability disclosure
     entries:
-      - title: CVE-2026-80713 (linux kernel) - 
+      - title: "CVE-2026-80713 (linux kernel) - "
         link_title: LINK
         url: https://ubuntu.com/security/CVE-2026-80713
 
