@@ -1,8 +1,7 @@
 entries:
   - title: NAME
     entries:
-      - title: 이규민, karajan
-      - title: Until Reaching the Pole
+      - title: 이규민, known as karajan
 
   - title: CONTACT
     entries:
@@ -27,7 +26,7 @@ entries:
 
   - title: Project
     entries:
-      - title: 화이트햇스쿨, 선박 기자재 탑재 SW 정보 수집 및 취약점 분석 (SeaBugs, 우수 프로젝트)
+      - title: 선박 기자재 탑재 SW 정보 수집 및 취약점 분석 (Team SeaBugs, 화이트햇스쿨 우수 프로젝트)
       - title: King of the Hill 교육 웹사이트 제작 (pole, 진행중)
       - title: 제4회 CSE-H-CON CTF 문제 출제 
       - title: "(confidential)"
