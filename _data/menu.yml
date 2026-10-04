@@ -48,6 +48,7 @@ entries:
       - title: "CVE-2026-80713 (linux kernel) - "
         link_title: LINK
         url: https://ubuntu.com/security/CVE-2026-80713
+      - title: "KVE-2026-0705 (비공개)"
 
   - title: Blog
     entries:
