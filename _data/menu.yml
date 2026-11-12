@@ -1,57 +1,107 @@
 entries:
   - title: NAME
     entries:
-      - title: 이규민, known as karajan
+      - title: Kyumin lee, known as karajan
 
   - title: CONTACT
     entries:
       - title: Mail - me@karajan.me
+
       - title: Discord - @karajann
-      - title: "X - "
-        link_title: "@karajann_"
+
+      - title: "X"
+        link_text: "X"
         url: https://x.com/karajann_
-      - title: "Instagram - "
-        link_title: "@qm1nn"
+
+      - title: "Instagram"
+        link_text: "Instagram"
         url: https://www.instagram.com/qm1nn/
-      - title: "Linkedin - "
-        link_title: "@kyumin-lee0"
+
+      - title: "Linkedin"
+        link_text: "Linkedin"
         url: "https://www.linkedin.com/in/kyumin-lee0/"
 
   - title: Experience
     entries:
-      - title: "[KITRI] WhiteHat School 3기 수료"
-      - title: "member of "
-        link_title: "RubiyaLab Expeditions"
+      - title: "[KRSECURITY] Pentesting & RedTeamming Researcher"
+        subtitle: 2026.10 ~
+
+      - title: "[KITRI] WhiteHat School 3rd"
+        subtitle: 2025.03 ~ 2025.09
+
+      - title: "[RubiyaLab] CTF Player"
+        subtitle: 2026.12 ~
+        link_text: "[RubiyaLab]"
         url: https://exp.rubiyalab.com/
 
-  - title: Project
+  - title: Talks & Presentations
     entries:
-      - title: 선박 기자재 탑재 SW 정보 수집 및 취약점 분석 (Team SeaBugs, 화이트햇스쿨 우수 프로젝트)
-      - title: 제4회 CSE-H-CON CTF 문제 출제 
-      - title: 2026 KAIST-POSTECH 학생 대제전 해킹 문제 출제
-      - title: "(confidential)"
+     - title: "From User to SYSTEM: Disabling Navigation with Single File Permission Bug"
+       subtitle: "Maritime Cybersecurity & AI Seminar, 한국해양대학교"
 
-  - title: Awards
+     - title: "and.. Comming Soon!"
+
+  - title: Publications
     entries:
-      - title: DEF CON 34 CTF 7th place (as Jinddabi's)
-      - title: BlackHat MEA CTF Qual 2026 3th place (as NAVER Cloud)
-      - title: TJCTF 2026 - 1st place (as Jinddabi's)
-      - title: 2026 HACKTHEON Sejong Finalist (as 실버타운)
-      - title: niteCTF 2025 - 2nd place (as ssul)
-      - title: hxp 39C3 CTF 2025 - 2nd place (as dizziness)
-      - title: bdsec CTF 2026 - 2nd place (as dizziness)
-      - title: 첨단AI 디지털 의료제품 레드팀 챌린지 우수상 
+      - title: "KIISC CISC-S '25"
+        subtitles:
+          - "S-100 표준 적용에 따른 ECDIS GPS 신호 조작 위협 시나리오 분석: STRIDE 모델 기반 접근"
+          - "S-100 표준 적용에 따른 ECDIS의 IP 인터페이스 사이버 위협 평가 방법론 연구"
+
+      - title: "2025 KIISC 영남지부 학술대회"
+        subtitle: "ECDIS 차트 삭제 업데이트의 오용 가능성과 절차적 대응 방안 연구"
+
+      - title: "KIISC WISA 2025"
+        subtitles:
+          - "Visual Tampering in S-52: Threats and Protections"
+          - "NMEA Under Siege: Dynamic Flooding Attacks and Defenses"
 
   - title: Vulnerability disclosure
     entries:
-      - title: "CVE-2026-80713 (linux kernel) - "
-        link_title: LINK
+      - title: "CVE-2026-80713 (Linux Kernel)"
+        link_text: "CVE-2026-80713"
         url: https://ubuntu.com/security/CVE-2026-80713
-      - title: "KVE-2026-0705 (비공개)"
+
+      - title: "KVE-2026-0705 (confidential)"
+
+      - title: "CVE-2026-105562 (windows)"
+        link_text: "CVE-2026-105562"
+        url: https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-105562
+
+  - title: Honors & Awards
+    entries:
+      - title: DEF CON 34 CTF 7th place (as Jinddabi's)
+
+      - title: HITCON 2026 CTF 2th place (as RubiyaLab + NCRT)
+
+      - title: BlackHat MEA CTF Qual 2026 3th place (as NAVER Cloud)
+
+      - title: TJCTF 2026 - 1st place (as Jinddabi's)
+
+      - title: 2026 HACKTHEON Sejong Finalist (as 실버타운)
+
+      - title: niteCTF 2025 - 2nd place (as ssul)
+
+      - title: hxp 39C3 CTF 2025 - 2nd place (as dizziness)
+
+      - title: bdsec CTF 2026 - 2nd place (as dizziness)
+
+      - title: 첨단AI 디지털 의료제품 레드팀 챌린지 우수상 
+
+  - title: Project
+    entries:
+      - title: 선박 기자재 탑재 SW 정보 수집 및 취약점 분석 (화이트햇스쿨 우수 프로젝트)
+
+      - title: 4th CSE-H-CON CTF - Challenge Author
+
+      - title: 2026 KAIST-POSTECH SCIENCE WAR, Hacking Challenge Author
+
+      - title: Whitehat School 4th CTF Challenge Author
 
   - title: Blog
     entries:
-      - title: go to blog page
+      - title: my blog page
         url: /blog/
+
       - title: tistory archive
         url: https://karajann.tistory.com/
