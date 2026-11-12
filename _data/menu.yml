@@ -9,17 +9,11 @@ entries:
 
       - title: Discord - @karajann
 
-      - title: "X"
-        link_text: "X"
-        url: https://x.com/karajann_
-
-      - title: "Instagram"
-        link_text: "Instagram"
-        url: https://www.instagram.com/qm1nn/
-
-      - title: "Linkedin"
-        link_text: "Linkedin"
-        url: "https://www.linkedin.com/in/kyumin-lee0/"
+      - links:
+          - title: X
+            url: https://x.com/karajann_
+          - title: LinkedIn
+            url: https://www.linkedin.com/in/kyumin-lee0/
 
   - title: Experience
     entries:
