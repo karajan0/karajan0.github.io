@@ -8,6 +8,11 @@
       {{ item.title }}
     {% endif %}
 
+    {% if item.subtitle %}
+      <br />
+      <small>{{ item.subtitle }}</small>
+    {% endif %}
+
     {% if item.post_list %}
       <ul>
         {% assign posts = site.posts %}
