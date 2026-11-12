@@ -9,6 +9,10 @@
   border-radius: 50%;
 }
 
+.w {
+  max-width: 900px;
+}
+
 .site-header {
   margin-bottom: 1.5rem;
 }
@@ -35,9 +39,25 @@
   margin-bottom: 0;
 }
 
-.home-menu-section > ul {
+.home-menu-section > details > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.home-menu-section > details > summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.home-menu-section > ul,
+.home-menu-section > details > ul {
   margin-top: 0.8rem;
   margin-bottom: 0;
+}
+
+.home-menu li > ul > li + li,
+.home-menu li > details > ul > li + li {
+  margin-top: 0.6rem;
 }
 
 hr {
