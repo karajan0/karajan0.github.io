@@ -15,7 +15,7 @@ theme_config:
   appearance: "dark"
   back_home_text: "home"
   date_format: "%Y-%m-%d"
-  show_description: false
+  show_description: true
 
 plugins:
   - jekyll-feed
