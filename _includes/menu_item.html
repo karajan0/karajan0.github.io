@@ -1,17 +1,32 @@
 {% for item in include.collection %}
   <li{% if include.item_class %} class="{{ include.item_class }}"{% endif %}>
-    {% if item.url and item.link_title %}
-      {{ item.title }}<a href="{{ item.url }}">{{ item.link_title }}</a>
-    {% elsif item.url %}
-      <a href="{{ item.url }}">{{ item.title }}</a>
+    {% assign is_collapsible = false %}
+    {% assign collapsible_titles = 'Honors & Awards|Project|Vulnerability disclosure|Publications' | split: '|' %}
+    {% if include.item_class == 'home-menu-section' and item.entries and collapsible_titles contains item.title %}
+      {% assign is_collapsible = true %}
+      <details>
+        <summary>{{ item.title }}</summary>
     {% else %}
-      {{ item.title }}
+      {% if item.url and item.link_text %}
+        {% capture linked_text %}<a href="{{ item.url }}">{{ item.link_text }}</a>{% endcapture %}
+        {{ item.title | replace: item.link_text, linked_text }}
+      {% elsif item.url and item.link_title %}
+        {{ item.title }}<a href="{{ item.url }}">{{ item.link_title }}</a>
+      {% elsif item.url %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      {% else %}
+        {{ item.title }}
+      {% endif %}
     {% endif %}
 
     {% if item.subtitle %}
       <br />
       <small>{{ item.subtitle }}</small>
     {% endif %}
+    {% for subtitle in item.subtitles %}
+      <br />
+      <small>{{ subtitle }}</small>
+    {% endfor %}
 
     {% if item.post_list %}
       <ul>
@@ -31,6 +46,9 @@
       <ul>
         {% include menu_item.html collection=item.entries %}
       </ul>
+    {% endif %}
+    {% if is_collapsible %}
+      </details>
     {% endif %}
   </li>
 {% endfor %}
