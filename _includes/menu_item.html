@@ -7,7 +7,11 @@
       <details>
         <summary>{{ item.title }}</summary>
     {% else %}
-      {% if item.url and item.link_text %}
+      {% if item.links %}
+        {% for link in item.links %}
+          {% unless forloop.first %}, {% endunless %}<a href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      {% elsif item.url and item.link_text %}
         {% capture linked_text %}<a href="{{ item.url }}">{{ item.link_text }}</a>{% endcapture %}
         {{ item.title | replace: item.link_text, linked_text }}
       {% elsif item.url and item.link_title %}
