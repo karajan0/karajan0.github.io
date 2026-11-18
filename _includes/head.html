@@ -14,7 +14,8 @@
   {%- seo title=false -%}
   {%- feed_meta -%}
 
-  <link rel="icon" type="image/png" href="{{ site.favicon | relative_url }}" />
+  <link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}?v=2" />
+  <link rel="apple-touch-icon" href="{{ site.favicon | relative_url }}?v=2" />
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/override.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
 </head>
