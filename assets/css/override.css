@@ -38,6 +38,25 @@
   outline-offset: 4px;
 }
 
+.cv-button {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cv-button:hover {
+  background: rgba(127, 127, 127, 0.2);
+}
+
+.cv-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 .home-menu-section > ul,
 .home-menu-section > details > ul {
   margin-top: 0.8rem;
