@@ -11,6 +11,8 @@
         {% for link in item.links %}
           {% unless forloop.first %}, {% endunless %}<a href="{{ link.url }}">{{ link.title }}</a>
         {% endfor %}
+      {% elsif item.url and item.button %}
+        <a class="cv-button" href="{{ item.url | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open CV PDF in a new tab">{{ item.title }}</a>
       {% elsif item.url and item.link_text %}
         {% capture linked_text %}<a href="{{ item.url }}">{{ item.link_text }}</a>{% endcapture %}
         {{ item.title | replace: item.link_text, linked_text }}
