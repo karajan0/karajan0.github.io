@@ -1,7 +1,8 @@
 entries:
-  - title: NAME
+  - title: WHOAMI
     entries:
-      - title: Kyumin lee, known as karajan
+      - title: Kyumin Lee, known as karajan
+        subtitle: "I love studying complex systems and finding browser bugs. I'm also exploring applied cryptography."
 
   - title: CONTACT
     entries:
