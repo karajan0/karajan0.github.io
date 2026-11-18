@@ -30,7 +30,9 @@ code {
 }
 
 .home-menu small {
+  display: block;
   font-size: 1em;
+  margin-top: 0.75em;
 }
 
 .home-menu-section {
