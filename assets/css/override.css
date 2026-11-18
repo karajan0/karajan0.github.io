@@ -29,6 +29,10 @@ code {
   margin-top: 0;
 }
 
+.home-menu small {
+  font-size: 1em;
+}
+
 .home-menu-section {
   margin: 0 0 2.4rem;
 }
